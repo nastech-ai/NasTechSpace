@@ -1,0 +1,1 @@
+- [NasTech rebrand](nastech-rebrand.md) — full Space Agent → NasTech rebrand complete; key files, CSS polish, Expo endpoint documented

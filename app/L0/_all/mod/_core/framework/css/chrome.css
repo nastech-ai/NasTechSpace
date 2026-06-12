@@ -1,0 +1,151 @@
+:root {
+  --space-chrome-surface: rgba(10, 18, 34, 0.92);
+  --space-chrome-surface-strong: rgba(8, 14, 28, 0.97);
+  --space-chrome-border: rgba(168, 186, 219, 0.13);
+  --space-chrome-border-strong: rgba(168, 186, 219, 0.24);
+  --space-chrome-hover-bg: #142238;
+  --space-chrome-active-bg: #0f1c30;
+  --space-chrome-panel-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.18);
+  --space-chrome-focus-ring: rgba(125, 220, 255, 0.3);
+  --space-chrome-radius: 20px;
+  --space-chrome-button-radius: 14px;
+}
+
+.space-topbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 7px;
+  margin: 0;
+  border: 1px solid var(--space-chrome-border);
+  border-radius: var(--space-chrome-radius);
+  background: var(--space-chrome-surface);
+  backdrop-filter: blur(22px) saturate(1.12);
+  -webkit-backdrop-filter: blur(22px) saturate(1.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.space-topbar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  border-radius: var(--space-chrome-button-radius);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    color 130ms ease,
+    border-color 130ms ease,
+    background-color 130ms ease,
+    transform 100ms ease;
+}
+
+.space-topbar-button x-icon {
+  font-size: 26px;
+  flex: 0 0 auto;
+}
+
+.space-topbar-button:hover,
+.space-topbar-button:focus-visible {
+  color: var(--color-text-primary);
+  border-color: var(--space-chrome-border);
+  background: var(--space-chrome-hover-bg);
+}
+
+.space-topbar-button:active {
+  transform: scale(0.96);
+}
+
+.space-topbar-button:focus-visible {
+  outline: 2px solid var(--space-chrome-focus-ring);
+  outline-offset: 2px;
+}
+
+.space-topbar-button.is-active {
+  color: var(--color-accent-primary);
+  border-color: var(--space-chrome-border-strong);
+  background: var(--space-chrome-active-bg);
+}
+
+.space-topbar-button--icon {
+  width: 48px;
+  padding: 0;
+}
+
+.space-topbar-menu {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.space-topbar-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: grid;
+  gap: 6px;
+  min-width: 196px;
+  padding: 8px;
+  border: 1px solid var(--space-chrome-border-strong);
+  border-radius: var(--space-chrome-radius);
+  background: var(--space-chrome-surface-strong);
+  box-shadow: var(--space-chrome-panel-shadow);
+  backdrop-filter: blur(22px) saturate(1.12);
+  -webkit-backdrop-filter: blur(22px) saturate(1.12);
+}
+
+.space-topbar-menu-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  border-radius: var(--space-chrome-button-radius);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.1;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    color 130ms ease,
+    border-color 130ms ease,
+    background-color 130ms ease;
+}
+
+.space-topbar-menu-action x-icon {
+  flex: 0 0 auto;
+  font-size: 20px;
+}
+
+.space-topbar-menu-action:hover,
+.space-topbar-menu-action:focus-visible {
+  color: var(--color-text-primary);
+  border-color: var(--space-chrome-border);
+  background: var(--space-chrome-hover-bg);
+}
+
+.space-topbar-menu-action:focus-visible {
+  outline: 2px solid var(--space-chrome-focus-ring);
+  outline-offset: 2px;
+}
+
+.space-topbar-menu-action-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+}

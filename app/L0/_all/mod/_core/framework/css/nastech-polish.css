@@ -1,0 +1,525 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   NasTech — AMOLED Black Theme + Global Polish
+   Overrides hard-coded navy hex values, enforces text containment, auto-fit.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── AMOLED token overrides ─────────────────────────────────────────────── */
+:root {
+  /* Radius scale */
+  --nt-radius-xs:   8px;
+  --nt-radius-sm:   12px;
+  --nt-radius-md:   16px;
+  --nt-radius-lg:   22px;
+  --nt-radius-xl:   28px;
+  --nt-radius-pill: 999px;
+
+  /* Transition */
+  --nt-transition: 140ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* AMOLED chrome */
+  --space-chrome-surface:         rgba(10, 10, 10, 0.94);
+  --space-chrome-surface-strong:  rgba(4,  4,  4,  0.98);
+  --space-chrome-border:          rgba(255, 255, 255, 0.07);
+  --space-chrome-border-strong:   rgba(255, 255, 255, 0.13);
+  --space-chrome-hover-bg:        #141414;
+  --space-chrome-active-bg:       #0f0f0f;
+  --space-chrome-panel-shadow:    0 12px 40px rgba(0,0,0,0.72), 0 2px 8px rgba(0,0,0,0.5);
+  --space-chrome-focus-ring:      rgba(125, 220, 255, 0.28);
+  --space-chrome-radius:          22px;
+  --space-chrome-button-radius:   14px;
+
+  /* AMOLED cards */
+  --space-card-border:       rgba(255, 255, 255, 0.07);
+  --space-card-border-strong: rgba(255, 255, 255, 0.13);
+  --space-card-bg:            rgba(13, 13, 13, 0.97);
+  --space-card-bg-strong:     rgba(8,  8,  8,  0.98);
+  --space-card-focus-ring:    rgba(125, 220, 255, 0.26);
+
+  /* AMOLED dialogs */
+  --space-dialog-radius:        22px;
+  --space-dialog-border:        rgba(255, 255, 255, 0.08);
+  --space-dialog-surface:       #080808;
+  --space-dialog-shadow:        0 24px 64px rgba(0,0,0,0.86);
+  --space-dialog-backdrop:      rgba(0, 0, 0, 0.82);
+  --space-field-bg:             #0f0f0f;
+  --space-field-border:         rgba(255, 255, 255, 0.08);
+  --space-field-focus-border:   rgba(125, 220, 255, 0.32);
+  --space-field-focus-ring:     rgba(125, 220, 255, 0.10);
+  --space-inline-code-bg:       rgba(125, 220, 255, 0.10);
+  --space-inline-code-border:   rgba(125, 220, 255, 0.16);
+  --space-option-hover-bg:      rgba(20, 20, 20, 0.96);
+  --space-option-radius:        0.9rem;
+
+  /* AMOLED buttons */
+  --space-button-secondary-bg:           rgba(14, 14, 14, 0.72);
+  --space-button-secondary-bg-hover:     rgba(22, 22, 22, 0.90);
+  --space-button-secondary-border:       rgba(255, 255, 255, 0.08);
+  --space-button-secondary-border-hover: rgba(255, 255, 255, 0.16);
+  --space-button-focus-ring:             rgba(125, 220, 255, 0.18);
+}
+
+/* ── Agent thread — override hard-coded navy hex values ─────────────────── */
+.agent-thread-surface {
+  --agent-thread-user-bubble-bg:      #111111;
+  --agent-thread-avatar-user-bg:      #111111;
+  --agent-thread-markdown-inline-bg:  rgba(125, 220, 255, 0.10);
+  --agent-thread-markdown-block-bg:   #0a0a0a;
+  --agent-thread-attachment-bg:       rgba(20, 20, 20, 0.70);
+  --agent-thread-attachment-user-bg:  rgba(125, 220, 255, 0.12);
+  --agent-thread-execution-bg:        #090909;
+  --agent-thread-execution-pane-bg:   #050505;
+  --agent-thread-terminal-divider:    rgba(255, 255, 255, 0.07);
+  --agent-thread-prompt-history-divider: rgba(255, 255, 255, 0.07);
+  --agent-thread-markdown-rule-color: rgba(255, 255, 255, 0.10);
+  --agent-thread-markdown-table-border: rgba(255, 255, 255, 0.08);
+  --agent-thread-markdown-table-head-bg: rgba(125, 220, 255, 0.06);
+  --agent-thread-markdown-table-row-bg: rgba(255, 255, 255, 0.02);
+  --agent-thread-markdown-table-row-alt-bg: rgba(255, 255, 255, 0.04);
+  --agent-thread-markdown-quote-border: rgba(125, 220, 255, 0.22);
+}
+
+/* ── Admin agent view — override hard-coded navy hex values ─────────────── */
+.admin-agent-root {
+  --space-button-primary-bg:          #0e1f30;
+  --space-button-primary-bg-hover:    #122537;
+  --space-button-secondary-bg-hover:  rgba(20, 20, 20, 0.96);
+  --space-dialog-surface:             #080808;
+  --space-field-bg:                   #0f0f0f;
+  --space-option-hover-bg:            rgba(20, 20, 20, 0.96);
+  --space-composer-attachment-bg:     rgba(15, 15, 15, 0.75);
+  --agent-thread-user-bubble-bg:      #111111;
+  --agent-thread-avatar-user-bg:      #111111;
+  --agent-thread-markdown-inline-bg:  rgba(125, 220, 255, 0.10);
+  --agent-thread-markdown-block-bg:   #0a0a0a;
+  --agent-thread-execution-bg:        #090909;
+  --agent-thread-execution-pane-bg:   #050505;
+}
+
+/* ── Remaining hard-coded surfaces ──────────────────────────────────────── */
+.space-action-card:hover,
+.space-action-card:focus-visible,
+.admin-launch-card:hover,
+.admin-launch-card:focus-visible {
+  background: #111111 !important;
+}
+
+.space-action-card x-icon,
+.space-action-card-icon,
+.admin-launch-card x-icon {
+  background: #161616 !important;
+}
+
+.space-placeholder x-icon,
+.admin-placeholder x-icon {
+  background: #141414 !important;
+}
+
+/* ── Topbar — radius update ─────────────────────────────────────────────── */
+.space-topbar {
+  border-radius: var(--space-chrome-radius) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.64), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.space-topbar-button {
+  border-radius: var(--space-chrome-button-radius) !important;
+}
+
+.space-topbar-menu-panel {
+  border-radius: var(--space-chrome-radius) !important;
+  box-shadow: var(--space-chrome-panel-shadow) !important;
+}
+
+.space-topbar-menu-action {
+  border-radius: var(--space-chrome-button-radius) !important;
+}
+
+/* ── Cards + dialogs — radius + AMOLED surface ──────────────────────────── */
+.space-card,
+.admin-card {
+  border-radius: var(--nt-radius-lg) !important;
+}
+
+.space-action-card,
+.admin-launch-card {
+  border-radius: var(--nt-radius-md) !important;
+}
+
+.dialog-card {
+  border-radius: var(--space-dialog-radius) !important;
+  background: var(--space-dialog-surface) !important;
+  box-shadow: var(--space-dialog-shadow) !important;
+  overflow: hidden;
+}
+
+.chat-dialog::backdrop {
+  background: var(--space-dialog-backdrop) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* ── Popovers ───────────────────────────────────────────────────────────── */
+.space-popover-panel {
+  border-radius: var(--nt-radius-lg) !important;
+  box-shadow: var(--space-chrome-panel-shadow) !important;
+}
+
+.space-popover-action {
+  border-radius: var(--space-chrome-button-radius) !important;
+}
+
+/* ── Raw output + prompt history (hard-coded bg) ────────────────────────── */
+.raw-output-frame {
+  background: #050505 !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.prompt-history-section {
+  background: #090909 !important;
+}
+
+.prompt-history-section:nth-child(even) {
+  background: #0d0d0d !important;
+}
+
+.prompt-budget-preview {
+  background: #050505 !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* ── Scrollbars — AMOLED thin ───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TEXT CONTAINMENT — No text may overflow its box
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/*
+ * Global containment baseline: every element wraps text and never clips
+ * sibling content. Hard truncation only on single-line label classes.
+ */
+* {
+  min-width: 0;
+}
+
+/* Multi-line text: wrap instead of overflow */
+p, li, td, th, dd, dt, blockquote, figcaption, label,
+.field-note, .dialog-note, .space-info-card p, .admin-info-card p,
+.space-placeholder p, .admin-placeholder p,
+.agent-thread-surface .message-text,
+.assistant-message-content, .chat-option-label {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* Single-line labels: ellipsis */
+.space-action-card span,
+.admin-launch-card span,
+.space-topbar-menu-action-label,
+.space-popover-action-label,
+.chat-option-value,
+.composer-hint,
+.admin-tab-label,
+.file-explorer-item-name,
+.dialog-header h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Flex containers: allow children to shrink */
+.dialog-header,
+.dialog-actions,
+.dialog-actions-group,
+.space-topbar,
+.admin-topbar,
+.space-action-card,
+.admin-launch-card,
+.space-topbar-menu-action,
+.space-popover-action,
+.agent-thread-surface .message-row,
+.agent-thread-surface .message-accessory {
+  min-width: 0;
+}
+
+.dialog-header h2 {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Prevent wide code blocks from blowing out their container */
+pre, code {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+pre code {
+  white-space: pre;
+  word-break: normal;
+}
+
+/* Table overflow: scroll the table, not the page */
+table {
+  width: 100%;
+  table-layout: fixed;
+  word-break: break-word;
+}
+
+/* Images and media: always contained */
+img, video, svg, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   AUTO-FIT GRIDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Action / launch card grids: fill available width, never overflow */
+.space-action-grid,
+.admin-launch-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+}
+
+/* Prompt budget grid */
+.prompt-budget-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   AMOLED BACKDROP — deepen star field
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* The backdrop gradient uses --color-canvas* vars which are now true black.
+   This rule ensures the body background itself is also pure black. */
+body.space-theme-canvas {
+  background-color: #000000 !important;
+}
+
+body.space-theme-canvas::before {
+  background: linear-gradient(
+    180deg,
+    #050505 0%,
+    #000000 48%,
+    #000000 100%
+  ) !important;
+}
+
+/* Deepen and sharpen the ambient glow for AMOLED contrast */
+.space-backdrop-glow {
+  opacity: 0.52 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CARD HOVER LIFT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.admin-launch-card,
+.space-action-card {
+  transition:
+    background-color var(--nt-transition),
+    border-color var(--nt-transition),
+    transform 120ms ease !important;
+}
+
+.admin-launch-card:hover,
+.space-action-card:hover {
+  transform: translateY(-2px);
+}
+
+.admin-launch-card:active,
+.space-action-card:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOCUS RINGS — consistent AMOLED-safe style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:focus-visible {
+  outline-color: rgba(125, 220, 255, 0.38) !important;
+  outline-offset: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE POLISH
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Prevent horizontal page scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Scrollable tab rows */
+  .admin-tab-list,
+  [role="tablist"] {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .admin-tab-list::-webkit-scrollbar,
+  [role="tablist"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Full-width action grids on tiny screens */
+  .space-action-grid,
+  .admin-launch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Dialog: full-bleed on small screens */
+  .dialog-card {
+    border-radius: var(--nt-radius-md) !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOGIN / ENTER PAGE POLISH
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Ensure login card text never overflows */
+.login-card,
+.enter-card,
+.run-modal,
+.run-choice {
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.run-choice-copy,
+.run-choice-title,
+.run-action-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ADMIN SHELL — AMOLED override for all hard-coded navy variables
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.app-page-admin {
+  --admin-pane-bg:
+    radial-gradient(860px 500px at 50% -180px, rgba(125, 220, 255, 0.06) 0%, transparent 76%),
+    radial-gradient(520px 420px at 10% 40%,   rgba(121, 237, 216, 0.04) 0%, transparent 76%),
+    linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+  --admin-pane-section-bg:        #0d0d0d;
+  --admin-pane-section-bg-strong: #080808;
+  --admin-main-bg:
+    radial-gradient(960px 560px at 50% -210px, rgba(125, 220, 255, 0.04) 0%, transparent 76%),
+    linear-gradient(180deg, #0b0b0b 0%, #000000 100%);
+  --admin-divider-bg:    linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+  --admin-border:        rgba(255, 255, 255, 0.07);
+  --admin-border-strong: rgba(255, 255, 255, 0.13);
+  --space-chrome-hover-bg:   #141414;
+  --space-chrome-active-bg:  #0f0f0f;
+  --space-card-bg:       var(--admin-pane-section-bg);
+  --space-card-bg-strong: var(--admin-pane-section-bg-strong);
+}
+
+/* Admin body backdrop — pure AMOLED black with subtle glow */
+body.app-page-admin {
+  background:
+    radial-gradient(1180px 620px at 50% -220px, rgba(125, 220, 255, 0.07) 0%, transparent 74%),
+    radial-gradient(720px 520px at 10% 34%,     rgba(121, 237, 216, 0.04) 0%, transparent 76%),
+    radial-gradient(760px 560px at 92% 42%,     rgba(125, 220, 255, 0.03) 0%, transparent 76%),
+    radial-gradient(1280px 760px at 50% calc(100% + 300px), rgba(30, 60, 140, 0.16) 0%, transparent 76%),
+    linear-gradient(180deg, #080808 0%, #000000 52%, #000000 100%) !important;
+}
+
+/* Divider color */
+.app-page-admin {
+  --divider-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE — Full viewport fit, no overflow, constrained panels
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 760px) {
+  /* All positioned panels/popovers must not escape viewport */
+  [style*="position: absolute"],
+  [style*="position:absolute"],
+  [style*="position: fixed"],
+  [style*="position:fixed"] {
+    max-width: calc(100vw - 8px) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Dialogs full-width on phones */
+  .space-dialog,
+  [class*="dialog"],
+  [class*="modal"] {
+    max-width: calc(100vw - 16px) !important;
+    margin-inline: 8px;
+  }
+
+  /* Prevent any element from causing horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Content padding from topbar */
+  .router-stage-inner {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 44px) !important;
+  }
+}
+
+@media (max-width: 540px) {
+  /* Popover panels fit phone screen */
+  .space-topbar-menu-panel,
+  .onscreen-menu-panel,
+  [class*="popover"],
+  [class*="dropdown"] {
+    max-width: calc(100vw - 8px) !important;
+    min-width: min(180px, calc(100vw - 8px)) !important;
+  }
+
+  /* Cards in grid always single column on phone */
+  .space-action-grid,
+  .admin-launch-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Reduce padding on panels/cards */
+  .space-panel,
+  .admin-panel {
+    gap: 10px;
+    padding-bottom: 16px;
+  }
+
+  .space-info-card,
+  .admin-info-card {
+    padding: 14px;
+  }
+}

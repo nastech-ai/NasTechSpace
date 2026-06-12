@@ -1,0 +1,65 @@
+:root {
+  /*
+   * NasTech AMOLED dark palette.
+   * True black backgrounds for OLED panels — depth from blur + borders, zero navy tint.
+   */
+  color-scheme: dark;
+
+  /* ── Canvas (pure black) ───────────────────────────────────────────────── */
+  --color-canvas:          #000000;
+  --color-canvas-elevated: #050505;
+  --color-canvas-deep:     #000000;
+
+  /* ── Surfaces (barely-there lift over black) ───────────────────────────── */
+  --color-surface-1:     #0d0d0d;
+  --color-surface-2:     #111111;
+  --color-surface-3:     #181818;
+  --color-surface-glass: rgba(4, 4, 4, 0.92);
+
+  /* ── Borders (pure-white whispers) ─────────────────────────────────────── */
+  --color-border-soft:   rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+
+  /* ── Text ───────────────────────────────────────────────────────────────── */
+  --color-text-primary:   #f0f6ff;
+  --color-text-secondary: #9aaec8;
+  --color-text-tertiary:  #637a99;
+
+  /* ── Accent (electric blue — pops on true black) ────────────────────────── */
+  --color-accent-primary:       #7ddcff;
+  --color-accent-primary-strong: #94bcff;
+  --color-accent-primary-soft:  rgba(125, 220, 255, 0.12);
+  --color-accent-secondary:     #79edd8;
+  --color-accent-ink:           #000d18;
+
+  /* ── Status ─────────────────────────────────────────────────────────────── */
+  --color-status-success: #6de0a8;
+  --color-status-warning: #ffbf5c;
+  --color-status-danger:  #ff7b8a;
+
+  /* ── Overlays ───────────────────────────────────────────────────────────── */
+  --color-layer-overlay: rgba(0, 0, 0, 0.78);
+
+  /* ── Backdrop (keep star/glow colours, deepen backgrounds) ─────────────── */
+  --color-backdrop-glow-primary:    rgba(125, 220, 255, 0.10);
+  --color-backdrop-glow-secondary:  rgba(121, 237, 216, 0.08);
+  --color-backdrop-glow-depth:      rgba(30, 55, 110, 0.20);
+  --color-backdrop-star-strong:     rgba(255, 255, 255, 0.82);
+  --color-backdrop-star-soft:       rgba(255, 255, 255, 0.28);
+  --color-backdrop-star-accent:     rgba(125, 220, 255, 0.52);
+  --color-backdrop-star-halo:       rgba(255, 255, 255, 0.10);
+  --color-backdrop-star-halo-accent: rgba(125, 220, 255, 0.14);
+
+  /* ── Semantic aliases ───────────────────────────────────────────────────── */
+  --color-background:    var(--color-canvas);
+  --color-surface:       var(--color-surface-1);
+  --color-surface-subtle: var(--color-surface-2);
+  --color-border:        var(--color-border-soft);
+  --color-text:          var(--color-text-primary);
+  --color-text-muted:    var(--color-text-secondary);
+  --color-primary:       var(--color-accent-primary-strong);
+  --color-success:       var(--color-status-success);
+  --color-warning:       var(--color-status-warning);
+  --color-danger:        var(--color-status-danger);
+  --color-overlay:       var(--color-layer-overlay);
+}

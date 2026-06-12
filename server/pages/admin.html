@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="application-name" content="NasTech" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="NasTech" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="NasTech — Your private AI agent platform, built to run anywhere."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NasTech" />
+    <meta property="og:title" content="NasTech | AI Agent Platform" />
+    <meta
+      property="og:description"
+      content="NasTech — Your private AI agent platform, built to run anywhere."
+    />
+    <meta property="og:url" content="https://nastech.app/" />
+    <meta property="og:image" content="/pages/res/readme-banner.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1774" />
+    <meta property="og:image:height" content="887" />
+    <meta property="og:image:alt" content="NasTech banner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NasTech | AI Agent Platform" />
+    <meta
+      name="twitter:description"
+      content="NasTech — Your private AI agent platform, built to run anywhere."
+    />
+    <meta name="twitter:url" content="https://nastech.app/" />
+    <meta name="twitter:image" content="/pages/res/readme-banner.webp" />
+    <meta name="twitter:image:alt" content="NasTech banner" />
+    <meta name="space-max-layer" content="0" />
+    <title>Admin Mode | NasTech</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- SPACE_SINGLE_USER_ENTER_GUARD -->
+    <link rel="stylesheet" href="/mod/_core/framework/css/colors.css?maxLayer=0" />
+    <link rel="stylesheet" href="/mod/_core/framework/css/index.css?maxLayer=0" />
+    <link rel="stylesheet" href="/mod/_core/framework/css/modals.css?maxLayer=0" />
+    <script type="module" src="/mod/_core/framework/js/initFw.js?maxLayer=0"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+        });
+      }
+    </script>
+  </head>
+  <body class="app-page-admin">
+    <x-extension id="page/admin/body/start"></x-extension>
+  </body>
+</html>
